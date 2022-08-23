@@ -38,11 +38,11 @@ function addToCart(element) {
 document.getElementById('calculate-btn').addEventListener('click', function () {
 
     const inputValue = getInputValueById('per-player-input');
-    const orderList = document.getElementById('order-list').childNodes.length;
+    const orderListExtra = document.getElementById('order-list').childNodes.length;
+    const orderList = orderListExtra - 1;
     const perPlayerCost = inputValue * orderList;
     const perPlayerText = document.getElementById('expense-amount');
     perPlayerText.innerText = perPlayerCost;
-
 })
 
 
@@ -50,7 +50,7 @@ document.getElementById('total-btn').addEventListener('click', function () {
     const managerField = getInputValueById('manager-field');
     const coachField = getInputValueById('coach-field');
     const perPlayerCostString = document.getElementById('expense-amount').innerText;
-    const perPlayerCost = parseFloat(perPlayerCostString)
+    const perPlayerCost = parseFloat(perPlayerCostString);
     const totalCostForPlayer = perPlayerCost + managerField + coachField;
     const totalCostAmount = document.getElementById('total-cost-amount');
     totalCostAmount.innerText = totalCostForPlayer;
