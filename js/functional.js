@@ -5,6 +5,7 @@ function getInputValueById(inputId) {
     const inputFieldValueString = inputField.value;
     const inputFieldValue = parseFloat(inputFieldValueString);
     // inputField.value = "";
+    const typeOfValue = typeof (inputFieldValue);
     return inputFieldValue;
 }
 
@@ -12,7 +13,7 @@ function getInputValueById(inputId) {
 
 
 
-//project code
+//project code a-z
 
 
 let count = 0
@@ -38,6 +39,7 @@ function addToCart(element) {
 document.getElementById('calculate-btn').addEventListener('click', function () {
 
     const inputValue = getInputValueById('per-player-input');
+
     const orderListExtra = document.getElementById('order-list').childNodes.length;
     const orderList = orderListExtra - 1;
     const perPlayerCost = inputValue * orderList;
